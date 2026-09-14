@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <title>モコタニンのページ</title>
+
+        <link rel="stylesheet" href="../style.css" />
+        <script src="../catgirl.js"></script>
+
+        <style>
+            .photopile {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                max-width: 100%;
+            }
+
+            .photopile figure {
+                display: inline-block;
+                background: white;
+                box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.55);
+                transform: rotate(2deg);
+                margin: 0 -25px;
+            }
+
+            .photopile figure img {
+                max-width: calc(100% - 2rem);
+                margin: 1rem 1rem 0 1rem;
+                border: 2px rgb(0, 0, 0, 0.55) inset;
+            }
+
+            .photopile figcaption,
+            .popovers figcaption {
+                font-family: /* set this to have it match the rest of the page */;
+                text-align: center;
+                margin: 0.5rem 1rem 1rem 1rem;
+                font-size: 1rem;
+                color: black;
+            }
+
+            .photopile button {
+                background: none;
+                border: none;
+                max-width: 40%;
+            }
+
+            .photopile button:hover,
+            .photopile button:focus {
+                z-index: 3;
+                cursor: pointer;
+            }
+
+            .photopile button:nth-child(2n) {
+                transform: rotate(-10deg);
+            }
+
+            .photopile button:nth-child(3n) {
+                transform: rotate(5deg);
+            }
+
+            .photopile button:nth-child(4n) {
+                transform: rotate(4deg);
+            }
+
+            .photopile button:nth-child(5n) {
+                transform: rotate(-2deg);
+            }
+
+            .photopile button:nth-child(6n) {
+                transform: rotate(-7deg);
+            }
+
+            :popover-open {
+                border: none;
+                box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.55);
+                position: fixed;
+                top: 50vh;
+                left: 50vw;
+                transform: translate(-50%, -50%);
+            }
+
+            .popovers figure:popover-open {
+                display: block;
+                background: white;
+                width: 88vmin;
+            }
+
+            .popovers figure:popover-open figcaption {
+                margin: 2.5vmin 1rem 4vmin 1rem;
+                font-size: 175%;
+                color: black;
+            }
+
+            .popovers figure:popover-open img {
+                margin: 4vmin 4vmin 0 4vmin;
+                width: 80vmin;
+                border: 4px rgb(0, 0, 0, 0.55) inset;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="site">
+            <div data-include="../components/header.html"></div>
+
+            <main class="grid">
+                <div data-include="../components/sidebar.html"></div>
+
+                <div class="content">
+                    <div class="photopile">
+                        <button popovertarget="photo1">
+                            <figure>
+                                <img src="/" alt="" />
+                                <figcaption>caption 1</figcaption>
+                            </figure>
+                        </button>
+                        <button popovertarget="photo2">
+                            <figure>
+                                <img src="" alt="" />
+                                <figcaption>caption 2</figcaption>
+                            </figure>
+                        </button>
+                        <button popovertarget="photo3">
+                            <figure>
+                                <img src="" alt="" />
+                                <figcaption>caption 3</figcaption>
+                            </figure>
+                        </button>
+                    </div>
+                    <div class="popovers">
+                        <figure popover id="photo1">
+                            <img src="/" alt="" />
+                            <figcaption>big caption 1</figcaption>
+                        </figure>
+                        <figure popover id="photo2">
+                            <img src="/" alt="" />
+                            <figcaption>big caption 2</figcaption>
+                        </figure>
+                        <figure popover id="photo3">
+                            <img src="/" alt="" />
+                            <figcaption>big caption 3</figcaption>
+                        </figure>
+                    </div>
+                    <img
+                        src="https://gifgifs.com/animations/webdesign-elements/under-construction/heavy_equipment.gif"
+                        alt="working"
+                    />
+                </div>
+            </main>
+            <div data-include="../components/footer.html"></div>
+        </div>
+        <script src="../include.js"></script>
+    </body>
+</html>

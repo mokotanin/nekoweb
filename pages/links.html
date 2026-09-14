@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <title>モコタニンのページ</title>
+
+        <link rel="stylesheet" href="../style.css" />
+        <script src="../catgirl.js"></script>
+    </head>
+
+    <body data-profile="france">
+        <div class="site">
+            <div data-include="../components/header.html"></div>
+
+            <main class="grid">
+                <div data-include="../components/sidebar.html"></div>
+
+                <div class="content">
+                    <style>
+                        @import url(../colors.css) .content {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            /* Centre horizontalement */
+                        }
+
+                        .retro-grid {
+                            display: grid;
+                            grid-template-columns: repeat(
+                                auto-fit,
+                                minmax(125px, 1fr)
+                            );
+                            gap: 2px;
+                            max-width: 600px;
+                            margin: 20px 0;
+                        }
+
+                        .grid-item {
+                            background: #f0f0f0;
+                            border: 1px solid #999;
+                            padding: 5px;
+                            text-align: center;
+                            font-size: 14px;
+                            cursor: pointer;
+                            transition: background 0.2s;
+                        }
+
+                        .grid-item img {
+                            min-width: 125px;
+                            min-height: 150px;
+                            display: block;
+                            margin-bottom: 5px;
+                        }
+
+                        .grid-item {
+                            background: transparent;
+                            border-color: var(--border);
+                            color: var(--fg);
+                        }
+
+                        .grid-item:hover {
+                            background: var(--brbg2);
+                        }
+
+                        .grid-item a {
+                            color: var(--link);
+                            text-decoration: none;
+                        }
+
+                        .grid-item a:hover {
+                            color: var(--link-hover);
+                            text-decoration: underline;
+                        }
+                    </style>
+
+                    <div class="retro-grid">
+                        <div class="grid-item">
+                            <img src="../assets/github.jpg" alt="github" />
+                            <a href="https://github.com/mokotanin">github</a>
+                        </div>
+                        <div class="grid-item">
+                            <img
+                                src="../assets/soundcloud.jpg"
+                                alt="soundcloud"
+                            />
+                            <a href="https://soundcloud.com/noobyyyyyy"
+                                >soundcloud</a
+                            >
+                        </div>
+                        <div class="grid-item">
+                            <img src="../assets/roblox.jpg" alt="roblox" />
+                            <a
+                                href="https://roblox.com/users/1428186019/profile"
+                                >roblox</a
+                            >
+                        </div>
+                        <div class="grid-item">
+                            <img src="../assets/spotify.jpg" alt="spotify" />
+                            <a
+                                href="https://open.spotify.com/user/45rrq19np6yycgozvs1uargk7?si=7d4ddd54c4764376"
+                                >spotify (inactive)</a
+                            >
+                        </div>
+                        <div class="grid-item">
+                            <img
+                                src="../assets/myanimelist.jpg"
+                                alt="myanimelist"
+                            />
+                            <a
+                                href="https://myanimelist.net/animelist/Nooby3103?status=7"
+                                >myanimelist</a
+                            >
+                        </div>
+                        <div class="grid-item">
+                            <img
+                                src="../assets/applemusic.jpg"
+                                alt="apple music"
+                            />
+                            <a
+                                href="https://music.apple.com/music.apple.com/profile/nooby_"
+                                >apple music</a
+                            >
+                        </div>
+                        <div class="grid-item">
+                            <img src="../assets/discord.jpg" alt="discord" />
+                            <a
+                                href="https://discord.com/users/634792282515701761"
+                                >discord</a
+                            >
+                        </div>
+                        <div class="grid-item">
+                            <img src="../assets/namemc.jpg" alt="namemc" />
+                            <a href="https://namemc.com/profile/titixssst.1"
+                                >namemc</a
+                            >
+                        </div>
+                        <div class="grid-item">
+                            <img src="../assets/paypal.jpg" alt="paypal" />
+                            <a href="https://paypal.me/titilamichto">paypal</a>
+                        </div>
+                        <div class="grid-item">
+                            <img src="../assets/x.jpg" alt="x" />
+                            <a href="https://x.com/torikage_05">x</a>
+                        </div>
+                        <div class="grid-item">
+                            <img
+                                src="../assets/letterboxd.jpg"
+                                alt="letterboxd"
+                            />
+                            <a href="https://letterboxd.com/Nooby3103/"
+                                >letterboxd</a
+                            >
+                        </div>
+                        <div class="grid-item">
+                            <img src="../assets/vndb.jpg" alt="vndb" />
+                            <a href="https://vndb.org/u339376">vndb</a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <div data-include="../components/footer.html"></div>
+        </div>
+        <script src="../include.js"></script>
+    </body>
+</html>

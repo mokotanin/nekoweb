@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <title>モコタニンのページ</title>
+
+        <link rel="stylesheet" href="../style.css" />
+        <script src="../catgirl.js"></script>
+    </head>
+
+    <body data-profile="france">
+        <div class="site">
+            <div data-include="../components/header.html"></div>
+
+            <main class="grid">
+                <div data-include="../components/sidebar.html"></div>
+
+                <div class="content">
+                    <div class="updates-grid media-updates">
+                        <section class="media-feed anime-feed">
+                            <h2>anime updates</h2>
+                            <div id="anime-updates">
+                                <p>loading...</p>
+                            </div>
+                        </section>
+
+                        <section class="media-feed manga-feed">
+                            <h2>manga updates</h2>
+                            <div id="manga-updates">
+                                <p>loading...</p>
+                            </div>
+                        </section>
+
+                        <section class="media-feed film-feed">
+                            <h2>film updates</h2>
+                            <div id="film-updates">
+                                <p>loading...</p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </main>
+            <div data-include="../components/footer.html"></div>
+        </div>
+        <script src="../include.js"></script>
+    </body>
+</html>

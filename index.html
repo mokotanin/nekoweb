@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <title>モコタニンのページ</title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="catgirl.js"></script>
+        <script src="lastfm.js"></script>
+    </head>
+
+    <body>
+        <div class="site">
+            <div data-include="components/header.html"></div>
+
+            <main class="grid">
+                <div data-include="components/sidebar.html"></div>
+
+                <div class="content">
+                    <div class="welcome">
+                        <h1>ようこそ！</h1>
+                        <p id="visitor-number">
+                            you're the number
+                            <!--# views -->
+                            visitor !
+                        </p>
+
+                        <div id="hidden-views" style="display: none">
+                            <!--# views -->
+                        </div>
+                        <div id="counter" class="counter"></div>
+                        <script>
+                            let viewElement =
+                                document.getElementById("hidden-views");
+                            let fullText = viewElement
+                                ? viewElement.innerText
+                                : "0";
+
+                            let numbersOnly = fullText.replace(/[^0-9]/g, "");
+                            let visitor_number = Number(numbersOnly) || 0;
+                            console.log("Loaded body script");
+                            const placeHolder =
+                                document.createElement("cat-girl-counter");
+                            document
+                                .getElementById("counter")
+                                .appendChild(placeHolder);
+                            placeHolder.count = visitor_number;
+                        </script>
+                    </div>
+
+                    <div class="top-grid">
+                        <section class="top-feed">
+                            <h2>アニメ</h2>
+                            <div class="top-list">
+                                <p>
+                                    <img
+                                        class="inline-img"
+                                        src="./assets/n1.gif"
+                                    />スーパーの裏でヤニ吸うふたり
+                                </p>
+                                <br />
+                                <p>
+                                    <img
+                                        class="inline-img"
+                                        src="./assets/n2.gif"
+                                    />五等分の花嫁∬
+                                </p>
+                                <br />
+                                <p>
+                                    <img
+                                        class="inline-img"
+                                        src="./assets/n3.gif"
+                                    />正反対な君と僕
+                                </p>
+                                <br />
+                            </div>
+                        </section>
+
+                        <section class="top-feed">
+                            <h2>マンガ</h2>
+                            <div class="top-list">
+                                <p>
+                                    <img
+                                        class="inline-img"
+                                        src="./assets/n1.gif"
+                                    />
+                                    アオハライド
+                                </p>
+                                <br />
+                                <p>
+                                    <img
+                                        class="inline-img"
+                                        src="./assets/n2.gif"
+                                    />薫る花は凛と咲く
+                                </p>
+                                <br />
+                                <p>
+                                    <img
+                                        class="inline-img"
+                                        src="./assets/n3.gif"
+                                    />おやすみプンプン
+                                </p>
+                                <br />
+                            </div>
+                        </section>
+
+                        <section class="top-feed">
+                            <h2>えいが</h2>
+                            <div class="top-list">
+                                <p>
+                                    <img
+                                        class="inline-img"
+                                        src="./assets/n1.gif"
+                                    />劇場版 チェンソーマン レゼ篇
+                                </p>
+                                <br />
+                                <p>
+                                    <img
+                                        class="inline-img"
+                                        src="./assets/n2.gif"
+                                    />살인의 추억
+                                </p>
+                                <br />
+                                <p>
+                                    <img
+                                        class="inline-img"
+                                        src="./assets/n3.gif"
+                                    />perfect days
+                                </p>
+                                <br />
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="currently">
+                        <h2>currently<br /><span class="ja">今まで</span></h2>
+                        <h3>test, test, 1 2 3</h3>
+                        <p>
+                            hello! welcome to my page. this is a personal page,
+                            so please don't expect too much. if you want to
+                            contact me, you can reach me using the links / email
+                            address in the sidebar!<br />
+                            <img
+                                src="https://i.ibb.co/HXCnMm4/21-CD3806-083-D-4621-B3-F4-D99645-C08355.png"
+                            />
+                        </p>
+                    </div>
+                </div>
+            </main>
+            <div data-include="components/footer.html"></div>
+        </div>
+        <script src="include.js"></script>
+    </body>
+</html>
