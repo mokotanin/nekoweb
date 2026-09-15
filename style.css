@@ -368,6 +368,15 @@ h2 {
     background: var(--brbg2);
 }
 
+.currently h3 {
+    border-top: 1px solid var(--border);
+    padding-top: 5px;
+}
+
+.currently .subheading {
+    border-top: none !important;
+}
+
 .counter img {
     width: 35px;
     height: auto;
