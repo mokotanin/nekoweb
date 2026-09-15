@@ -139,6 +139,14 @@ h2 {
     font-size: 12px;
 }
 
+.left-c .badge {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    margin: 2px auto 8px;
+    padding-top: 8px;
+}
+
 /* now playing */
 
 .left-c [id="nowplaying"] {

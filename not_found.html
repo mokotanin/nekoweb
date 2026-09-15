@@ -1,12 +1,96 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Not found.</title>
-</head>
-<body>
-    Page was not found.
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>?</title>
+        <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+
+        <style>
+            body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+                margin: 0;
+                background-color: black;
+                color: white;
+                text-align: center;
+                font-family: "Noto Sans JP", sans-serif;
+            }
+
+            .not-found-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .image-frame {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 12px;
+                max-width: 100%;
+            }
+
+            .vertical-text {
+                font-size: 14px;
+                line-height: 1.2;
+                white-space: nowrap;
+                writing-mode: vertical-rl;
+                text-orientation: upright;
+            }
+
+            img {
+                display: block;
+                max-width: 75%;
+                height: auto;
+                flex-shrink: 0;
+            }
+
+            p {
+                margin-bottom: 15px;
+                max-width: 90%;
+                font-size: 18px;
+            }
+            [id="404t"] {
+                font-size: 35px;
+                font-weight: bold;
+                color: #32594b;
+            }
+        </style>
+    </head>
+
+    <body>
+        <main class="not-found-content">
+            <p>
+                <span id="404t">404 Not Found </span> <br />
+                田 舎 の ネ ズ ミ は 安 全 に 暮 ら せ る け ど 、 都 会 の よ
+                う に 美 味 し い 食 事 は で き な い 。 都 会 の ネ ズ ミ は
+                美 味 し い 食 事 に あ り つ け る け ど 、 人 や 猫 に 殺 さ
+                れ る 危 険 性 が 高 い 。 僕 は 田 舎 の ネ ズ ミ が 良 か っ
+                た 。 け ど 、 マ キ マ に 捕 ま っ て 、 都 会 に 連 れ て 来
+                ら れ た ん だ 。 僕 の 心 は 田 舎 に あ る の さ 都 会 の 君
+                に 付 き 合 っ て 危 険 な 目 に 会 う の は ご め ん だ ね。
+            </p>
+            <div class="image-frame">
+                <span class="vertical-text left"
+                    >イソップ寓話「田舎のネズミと都会のネズミ」</span
+                >
+                <img src="./assets/404.jpg" />
+                <span class="vertical-text">Aesop’s Fable</span>
+            </div>
+            <p>
+                The country mouse can live in safety, but it can’t have meals as
+                delicious as in the city. The city mouse can get delicious
+                meals, but there’s a high risk of being killed by humans or
+                cats. I would have preferred to be the country mouse. But I was
+                caught by Makima and brought to the city. My heart is in the
+                countryside. I’ll pass on keeping you company, a city mouse like
+                you, and running into danger.
+            </p>
+        </main>
+    </body>
 </html>
