@@ -6,6 +6,43 @@
 @import url("https://www.nerdfonts.com/assets/css/webfont.css");
 @import url("colors.css");
 
+/* cybervariables */
+
+:root {
+    /* bgs */
+    --bg: #000000;
+    --brbg: #0a0a0a;
+    --brbg2: #141414;
+    --terminal: #000000;
+
+    /* texts */
+    --fg: #ffffff;
+    --brfg3: #e0e0e0;
+    --terminal-f: #fcee0a;
+
+    /* accents */
+    --cyber-yellow: #fcee0a;
+    --cyber-red: #ff003c;
+    --cyber-blue: #00f0ff;
+
+    /* mapping existing vars */
+    --coral: var(--cyber-red);
+    --salmon: #ff5e5e;
+    --green: var(--cyber-yellow);
+
+    /* links */
+    --link: var(--cyber-yellow);
+    --link-hover: var(--cyber-red);
+
+    /* borders */
+    --border: #333333; /* Gris sombre pour les bordures internes */
+    --brborder: var(--cyber-yellow); /* Jaune pour les bordures principales */
+    --brfg: var(--cyber-yellow);
+    --brfg2: #ffffff; /* Titres de médias en blanc */
+
+    --parchment: #000000;
+}
+
 /* base */
 
 * {
@@ -17,25 +54,30 @@
 
 body {
     margin: 0;
-    background-color: var(--bg);
-    background-image: url("./assets/bg.png");
+    background: #000
+        url("https://www.cyberpunk.net/build/images/cp_er2-media-bg-7716e781.jpg")
+        no-repeat 50%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: var(--fg);
-    font-family: "MS PGothic";
+    font-family: "M PLUS 1 Code", "MS PGothic", monospace;
     font-size: 11pt;
+    line-height: 1.5;
 }
 
 a {
     color: var(--link);
     text-decoration: none;
+    transition: all 0.2s ease-in-out;
 }
 
 a:hover {
-    color: var(--link-hover);
-    text-decoration: underline;
+    color: #000000;
+    background-color: var(--cyber-red);
+    text-decoration: none;
+    padding: 0 2px;
 }
 
 img {
@@ -43,15 +85,22 @@ img {
     padding: 2px;
 }
 
-/* page shell and layout */
+::selection {
+    background: var(--cyber-red);
+    color: #000000;
+}
+
+/* page shell + layout */
 
 .site {
     width: 900px;
     margin: 30px auto;
     visibility: hidden;
     background: var(--brbg);
-    border: 1px solid var(--brborder);
-    box-shadow: 0 8px 24px rgb(32 21 22 / 35%);
+    border: 2px solid var(--brborder);
+    box-shadow:
+        0 0 15px rgba(252, 238, 10, 0.15),
+        0 8px 30px rgba(0, 0, 0, 0.9);
 }
 
 .site.includes-ready {
@@ -65,36 +114,48 @@ img {
     padding: 8px;
 }
 
-/* header and navigation */
+/* header + nav */
 
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 12px 16px;
-    background: var(--brbg2);
-    border-bottom: 1px solid var(--brborder);
+    background: var(--cyber-yellow);
+    border-bottom: 4px solid var(--cyber-red);
 }
 
 .logo {
-    font-family: "MS PGothic";
-    font-size: 26px;
+    font-family: "DotGothic16", monospace;
+    font-size: 28px;
     font-weight: bold;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+    color: #000000;
+    text-transform: uppercase;
 }
 
 .logo .ja {
     display: block;
     margin-top: -2px !important;
-    font-family: inherit;
+    font-family: "M PLUS 1 Code", monospace;
     font-size: 10pt;
 }
 
 nav a {
     margin-left: 12px;
+    color: #000000 !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 10pt;
 }
 
-/* shared sections and headings */
+nav a:hover {
+    color: var(--cyber-yellow) !important;
+    background-color: #000000;
+    padding: 2px 6px;
+}
+
+/* sections + titles */
 
 section {
     margin: 2px 0 8px;
@@ -121,22 +182,31 @@ section a {
 h1,
 h2 {
     margin: 0;
-    padding: 5px 8px;
+    padding: 6px 8px;
     color: var(--brfg);
+    background-color: var(--brbg2);
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px rgba(252, 238, 10, 0.4);
+    border-bottom: 4px solid var(--cyber-red);
 }
 
 /* sidebar */
 
 .left-c p {
     margin: 3px 8px;
-    word-break: break-all;
+    word-break: normal;
+    overflow-wrap: break-word;
     white-space: normal;
 }
 
 .left-c h2 {
-    background: var(--brbg2);
-    border-bottom: 1px solid var(--border);
+    background: var(--cyber-yellow);
+    color: #000000;
+    border-bottom: 2px solid var(--cyber-red);
     font-size: 12px;
+    text-shadow: none;
 }
 
 .left-c .badge {
@@ -147,18 +217,18 @@ h2 {
     padding-top: 8px;
 }
 
-/* now playing */
-
+/* Now Playing */
 .left-c [id="nowplaying"] {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 3px;
     margin-top: 5px;
-    color: var(--brfg2);
+    color: var(--cyber-red);
     font-size: 10pt;
     text-transform: lowercase;
     word-break: keep-all !important;
+    font-weight: bold;
 }
 
 .left-c #nowplaying-cd,
@@ -169,7 +239,7 @@ h2 {
     vertical-align: middle;
 }
 
-/* main content */
+/* main */
 
 .welcome {
     border: 1px solid var(--border);
@@ -205,7 +275,8 @@ h2 {
 
 .updates-grid .date {
     margin-right: 4px;
-    color: var(--brfg);
+    color: var(--cyber-red);
+    font-weight: bold;
 }
 
 .updates-grid .media-status {
@@ -216,16 +287,16 @@ h2 {
 
 .updates-grid .status-watching,
 .updates-grid .status-reading {
-    color: var(--green);
+    color: var(--cyber-yellow);
 }
 
 .updates-grid .status-dropped {
-    color: var(--coral);
+    color: var(--cyber-red);
 }
 
 .updates-grid .status-plan-to-watch,
 .updates-grid .status-plan-to-read {
-    color: var(--link);
+    color: var(--cyber-blue);
 }
 
 .updates-grid .status-on-hold {
@@ -234,6 +305,7 @@ h2 {
 
 .updates-grid .media-title {
     color: var(--brfg2);
+    font-weight: bold;
 }
 
 .updates-grid .media-progress {
@@ -242,6 +314,7 @@ h2 {
     font-size: 0.9em;
 }
 
+/* media cards */
 .media-card {
     display: flex;
     gap: 10px;
@@ -278,12 +351,12 @@ h2 {
 }
 
 .media-details .media-title {
-    color: var(--brfg2);
+    color: var(--cyber-yellow);
 }
 
 .media-year,
 .media-date {
-    color: var(--brfg);
+    color: var(--cyber-red);
     font-size: 0.9em;
 }
 
@@ -292,7 +365,7 @@ h2 {
 }
 
 .film-card .media-title {
-    color: var(--brfg2);
+    color: var(--cyber-yellow);
 }
 
 .top-grid {
@@ -327,15 +400,17 @@ h2 {
 }
 
 .content h1 {
-    background: var(--brbg2);
-    font-size: 18px;
+    background: var(--cyber-yellow);
+    color: #000000;
+    font-size: 20px;
+    text-shadow: none;
 }
 
 .content > h2 {
     width: calc(100% + 2px);
     margin-left: -1px;
     background: var(--brbg2);
-    border-top: 1px solid var(--brborder);
+    border-top: 1px solid var(--cyber-red);
     font-size: 16px;
 }
 
@@ -356,8 +431,9 @@ h2 {
     margin: 8px 0 0;
     padding: 2px 8px 0;
     overflow-wrap: break-word;
-    color: var(--brfg2);
+    color: var(--cyber-yellow);
     font-size: 16px;
+    text-transform: uppercase;
 }
 
 .currently {
@@ -386,21 +462,31 @@ h2 {
 
 footer {
     padding: 12px;
-    background: var(--brbg2);
-    border-top: 1px solid var(--brborder);
+    background: var(--cyber-yellow);
+    border-top: 4px solid var(--cyber-red);
     font-size: 11px;
     text-align: center;
+    color: #000000;
+    font-weight: bold;
 }
 
-::selection {
-    background: var(--salmon);
-    color: var(--parchment);
+footer a {
+    color: #000000;
+}
+
+footer a:hover {
+    background: #000000;
+    color: var(--cyber-yellow);
 }
 
 .date {
-    color: var(--brfg2);
+    color: var(--cyber-red);
 }
 
 span#nowplaying-text {
-    color: var(--brfg2);
+    color: var(--cyber-red);
+}
+
+span#nowplaying-text:hover {
+    color: #000000;
 }

@@ -1,4 +1,31 @@
 :root {
+    /* Fonds */
+    --bg: #000000; /* Noir pur pour le fond principal */
+    --terminal: #0a0a0a; /* Noir légèrement grisé pour les zones de texte */
+    --brbg: #121212; /* Fond des blocs/boutons, gris très foncé */
+
+    /* Textes principaux */
+    --fg: #ffffff; /* Blanc pur pour le texte principal (comme sur l'image) */
+    --terminal-f: #fcee0a; /* Le fameux Jaune Cyberpunk pour le texte terminal */
+
+    /* Accents et Couleurs Vives */
+    --coral: #ff003c; /* Rouge Néon Edgerunners (très saturé) */
+    --salmon: #ff5e5e; /* Une version plus douce du rouge pour les sous-titres */
+
+    /* Bordures */
+    --border: #fcee0a; /* Bordures Jaune pour délimiter les cadres */
+    --brborder: #ff003c; /* Bordures Rouges pour les éléments importants */
+
+    /* Liens */
+    --link: var(--capri-face); /* Liens en Jaune */
+    --link-hover: #ff003c; /* Changement en Rouge au survol */
+
+    /* Variables de couleurs vives (repensées pour le thème) */
+    --green: #fcee0a; /* Remplacé par le Jaune Cyberpunk (ou essayez #00ff00 pour un vert toxique) */
+    --brfg: #ff003c; /* Rouge Néon */
+    --brfg2: #fcee0a; /* Jaune Cyberpunk */
+    --brfg3: #ffffff; /* Blanc */
+    /*
     --terminal: #201516;
     --terminal-f: #f1b36d;
     --fg: var(--almond-cream);
@@ -15,8 +42,16 @@
     --brfg: var(--sandy-clay);
     --brfg2: var(--almond-silk);
     --brfg3: var(--almond-cream);
-
+    */
     /* css hex */
+    --capri-red: #f20544;
+    --capri-eye: #0c5be2;
+    --capri-shadow: #591ed9;
+    --capri-face: #13f24b;
+    --capri-skin: #080315;
+    --capri-white: #fdbbea;
+
+    /* old css hex */
     --coffee-bean: #2a1b1c;
     --sandy-clay: #efb978;
     --dark-coffee: #3b2423;

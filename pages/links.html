@@ -4,6 +4,12 @@
         <meta charset="UTF-8" />
         <title>モコタニンのページ</title>
 
+        <!-- Font Awesome pour les icônes de marques -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+
         <link rel="stylesheet" href="../style.css" />
         <script src="../catgirl.js"></script>
         <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
@@ -18,149 +24,260 @@
 
                 <div class="content">
                     <style>
-                        @import url(../colors.css) .content {
+                        @import url("../colors.css");
+
+                        .content {
                             display: flex;
                             flex-direction: column;
                             align-items: center;
-                            /* Centre horizontalement */
                         }
 
-                        .retro-grid {
-                            display: grid;
-                            grid-template-columns: repeat(
-                                auto-fit,
-                                minmax(125px, 1fr)
-                            );
-                            gap: 2px;
-                            max-width: 600px;
-                            margin: 20px 0;
+                        /* Conteneur principal des icônes */
+                        .icon-grid {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: center;
+                            gap: 30px; /* Espace entre les icônes */
+                            max-width: 750px;
+                            margin: 30px auto;
+                            padding: 30px 20px;
+                            background: var(--brbg2); /* #141414 */
+                            border: 1px solid var(--border);
+                            border-radius: 4px;
+                            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5); /* Profondeur */
                         }
 
-                        .grid-item {
-                            background: #f0f0f0;
-                            border: 1px solid #999;
-                            padding: 5px;
-                            text-align: center;
-                            font-size: 14px;
-                            cursor: pointer;
-                            transition: background 0.2s;
-                        }
-
-                        .grid-item img {
-                            min-width: 125px;
-                            min-height: 150px;
-                            display: block;
-                            margin-bottom: 5px;
-                        }
-
-                        .grid-item {
-                            background: transparent;
-                            border-color: var(--border);
-                            color: var(--fg);
-                        }
-
-                        .grid-item:hover {
-                            background: var(--brbg2);
-                        }
-
-                        .grid-item a {
-                            color: var(--link);
+                        /* Style de chaque lien */
+                        a.icon-item {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
                             text-decoration: none;
+                            transition: transform 0.2s ease-in-out;
                         }
 
-                        .grid-item a:hover {
-                            color: var(--link-hover);
-                            text-decoration: underline;
+                        /* IMPORTANT : Annule le hover rouge global de ton style.css */
+                        a.icon-item:hover {
+                            background-color: transparent !important;
+                            color: inherit !important;
+                            transform: translateY(-5px) scale(1.1); /* Petit saut et zoom */
                         }
+
+                        /* Style de l'icône de base */
+                        .icon-item i {
+                            font-size: 42px; /* Icônes plus grandes */
+                            color: #a0a0a0; /* Gris clair par défaut pour le contraste */
+                            margin-bottom: 10px;
+                            transition: all 0.3s ease;
+                        }
+
+                        /* Style du texte sous l'icône */
+                        .icon-item span {
+                            font-size: 11px;
+                            text-transform: uppercase;
+                            font-weight: 900;
+                            letter-spacing: 1px;
+                            color: var(--cyber-yellow); /* Jaune néon */
+                            transition: all 0.3s ease;
+                        }
+
+                        /* --- EFFETS HOVER ET COULEURS DE MARQUES (Contraste optimisé) --- */
+
+                        /* Lueur générale au survol */
+                        a.icon-item:hover i {
+                            filter: drop-shadow(0 0 12px currentColor);
+                        }
+
+                        /* Texte en blanc lumineux au survol */
+                        a.icon-item:hover span {
+                            color: #ffffff;
+                            text-shadow: 0 0 8px #ffffff;
+                        }
+
+                        /* Couleurs spécifiques (éclaircies pour le fond sombre) */
+                        .icon-github:hover i {
+                            color: #ffffff;
+                        }
+                        .icon-soundcloud:hover i {
+                            color: #ff5500;
+                        }
+                        .icon-roblox:hover i {
+                            color: #ff3b30;
+                        } /* Rouge plus vif */
+                        .icon-spotify:hover i {
+                            color: #1db954;
+                        }
+                        .icon-mal:hover i {
+                            color: #4a7cd6;
+                        } /* Bleu clair pour contraster */
+                        .icon-apple:hover i {
+                            color: #fa57c1;
+                        }
+                        .icon-discord:hover i {
+                            color: #5865f2;
+                        }
+                        .icon-namemc:hover i {
+                            color: #00aaff;
+                        }
+                        .icon-paypal:hover i {
+                            color: #009cde;
+                        } /* Bleu lumineux PayPal */
+                        .icon-x:hover i {
+                            color: #ffffff;
+                        }
+                        .icon-letterboxd:hover i {
+                            color: #00e054;
+                        }
+                        .icon-vndb:hover i {
+                            color: #ff3344;
+                        } /* Rouge plus lumineux */
                     </style>
 
-                    <div class="retro-grid">
-                        <div class="grid-item">
-                            <img src="../assets/github.jpg" alt="github" />
-                            <a href="https://github.com/mokotanin">github</a>
-                        </div>
-                        <div class="grid-item">
+                    <div class="icon-grid">
+                        <a
+                            href="https://github.com/mokotanin"
+                            class="icon-item icon-github"
+                            title="GitHub"
+                        >
                             <img
-                                src="../assets/soundcloud.jpg"
-                                alt="soundcloud"
+                                src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-white-icon.png"
+                                width="55px"
+                                height="55px"
                             />
-                            <a href="https://soundcloud.com/noobyyyyyy"
-                                >soundcloud</a
-                            >
-                        </div>
-                        <div class="grid-item">
-                            <img src="../assets/roblox.jpg" alt="roblox" />
-                            <a
-                                href="https://roblox.com/users/1428186019/profile"
-                                >roblox</a
-                            >
-                        </div>
-                        <div class="grid-item">
-                            <img src="../assets/spotify.jpg" alt="spotify" />
-                            <a
-                                href="https://open.spotify.com/user/45rrq19np6yycgozvs1uargk7?si=7d4ddd54c4764376"
-                                >spotify (inactive)</a
-                            >
-                        </div>
-                        <div class="grid-item">
+                        </a>
+
+                        <a
+                            href="https://soundcloud.com/noobyyyyyy"
+                            class="icon-item icon-soundcloud"
+                            title="SoundCloud"
+                        >
                             <img
-                                src="../assets/myanimelist.jpg"
-                                alt="myanimelist"
+                                src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/soundcloud-white-icon.png"
+                                width="55px"
+                                height="55px"
                             />
-                            <a
-                                href="https://myanimelist.net/animelist/Nooby3103?status=7"
-                                >myanimelist</a
-                            >
-                        </div>
-                        <div class="grid-item">
+                        </a>
+
+                        <a
+                            href="https://roblox.com/users/1428186019/profile"
+                            class="icon-item icon-roblox"
+                            title="Roblox"
+                        >
                             <img
-                                src="../assets/applemusic.jpg"
-                                alt="apple music"
+                                src="https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Roblox_Corporation_2025_logo.svg/3840px-Roblox_Corporation_2025_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail"
+                                width="55px"
+                                height="55px"
                             />
-                            <a
-                                href="https://music.apple.com/music.apple.com/profile/nooby_"
-                                >apple music</a
-                            >
-                        </div>
-                        <div class="grid-item">
-                            <img src="../assets/discord.jpg" alt="discord" />
-                            <a
-                                href="https://discord.com/users/634792282515701761"
-                                >discord</a
-                            >
-                        </div>
-                        <div class="grid-item">
-                            <img src="../assets/namemc.jpg" alt="namemc" />
-                            <a href="https://namemc.com/profile/titixssst.1"
-                                >namemc</a
-                            >
-                        </div>
-                        <div class="grid-item">
-                            <img src="../assets/paypal.jpg" alt="paypal" />
-                            <a href="https://paypal.me/titilamichto">paypal</a>
-                        </div>
-                        <div class="grid-item">
-                            <img src="../assets/x.jpg" alt="x" />
-                            <a href="https://x.com/torikage_05">x</a>
-                        </div>
-                        <div class="grid-item">
+                        </a>
+
+                        <a
+                            href="https://open.spotify.com/user/45rrq19np6yycgozvs1uargk7"
+                            class="icon-item icon-spotify"
+                            title="Spotify"
+                        >
                             <img
-                                src="../assets/letterboxd.jpg"
-                                alt="letterboxd"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT4Etwn9YseNZjBn99AHtkQXAkeDoT7UKtSsRUVz0ldA&s=10"
+                                width="55px"
+                                height="55px"
                             />
-                            <a href="https://letterboxd.com/Nooby3103/"
-                                >letterboxd</a
-                            >
-                        </div>
-                        <div class="grid-item">
-                            <img src="../assets/vndb.jpg" alt="vndb" />
-                            <a href="https://vndb.org/u339376">vndb</a>
-                        </div>
+                        </a>
+
+                        <a
+                            href="https://myanimelist.net/animelist/Nooby3103?status=7"
+                            class="icon-item icon-mal"
+                            title="MyAnimeList"
+                        >
+                            <img src="../assets/myanimelist.png" width="55px" />
+                        </a>
+
+                        <a
+                            href="https://music.apple.com/profile/nooby_"
+                            class="icon-item icon-apple"
+                            title="Apple Music"
+                        >
+                            <img
+                                src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Apple_Music_icon.svg/1280px-Apple_Music_icon.svg.png?utm_source=fr.wikipedia.org&utm_campaign=index&utm_content=thumbnail"
+                                width="55px"
+                                height="55px"
+                            />
+                        </a>
+
+                        <a
+                            href="https://discord.com/users/634792282515701761"
+                            class="icon-item icon-discord"
+                            title="Discord"
+                        >
+                            <img
+                                src="https://www.svgrepo.com/show/353655/discord-icon.svg"
+                                width="55px"
+                                height="55px"
+                            />
+                        </a>
+
+                        <a
+                            href="https://namemc.com/profile/titixssst.1"
+                            class="icon-item icon-namemc"
+                            title="NameMC"
+                        >
+                            <img
+                                src="https://pbs.twimg.com/profile_images/1596956295990583296/nS_HkfAq_400x400.jpg"
+                                width="55px"
+                                height="55px"
+                            />
+                        </a>
+
+                        <a
+                            href="https://paypal.me/titilamichto"
+                            class="icon-item icon-paypal"
+                            title="PayPal"
+                        >
+                            <img
+                                src="https://cdn-icons-png.flaticon.com/512/174/174861.png"
+                                width="55px"
+                                height="55px"
+                            />
+                        </a>
+
+                        <a
+                            href="https://x.com/torikage_05"
+                            class="icon-item icon-x"
+                            title="X (Twitter)"
+                        >
+                            <img
+                                src="https://img.magnific.com/free-vector/new-2023-twitter-logo-x-icon-design_1017-45418.jpg?semt=ais_hybrid&w=740&q=80"
+                                width="55px"
+                                height="55px"
+                            />
+                        </a>
+
+                        <a
+                            href="https://letterboxd.com/Nooby3103/"
+                            class="icon-item icon-letterboxd"
+                            title="Letterboxd"
+                        >
+                            <img
+                                src="https://a.ltrbxd.com/logos/letterboxd-mac-icon.png"
+                                width="55px"
+                                height="55px"
+                            />
+                        </a>
+
+                        <a
+                            href="https://vndb.org/u339376"
+                            class="icon-item icon-vndb"
+                            title="VNDB"
+                        >
+                            <img
+                                src="https://raw.githubusercontent.com/chrmargra/vn-browser-android/f27b861b20b2e218c0917f1316b133eba92b8b2e/assets/store/icon.png"
+                                width="55px"
+                                height="55px"
+                            />
+                        </a>
                     </div>
                 </div>
             </main>
             <div data-include="../components/footer.html"></div>
         </div>
-        <script src="../include.js"></script>
+        <script id="footerspan" src="../include.js"></script>
     </body>
 </html>
